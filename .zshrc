@@ -102,14 +102,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-eval "$(zoxide init --cmd cd zsh)"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #export FPATH=~/.zsh_completions:$FPATH
 #autoload -U _is-at-least && _is-at-least
 
-export PATH=$PATH:/home/chaas/.spicetify
+alias config='/usr/bin/git --git-dir=/home/ck/.cfg/ --work-tree=/home/ck/'
+export PATH=$PATH:~/.local/bin
+eval "$(zoxide init --cmd cd zsh)"
 
-alias config='/usr/bin/git --git-dir=/home/chaas/.cfg/ --work-tree=/home/chaas'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=12'
+eval "$(starship init zsh)"

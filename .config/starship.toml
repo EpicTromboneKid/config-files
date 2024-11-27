@@ -1,0 +1,45 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$username at $hostname in $directory$package$rust
+$character
+$gcloud
+"""
+
+right_format = "$cmd_duration$git_branch$git_status"
+
+add_newline = false
+
+[username]
+show_always = true
+format = '[$user]($style)'
+
+[hostname]
+ssh_only = false
+format = '[$hostname]($style)'
+
+[character] # The name of the module we are configuring is 'character'
+success_symbol = '[∫](bold green)'
+error_symbol = '[∂](bold red)'
+
+[cmd_duration]
+min_time = 1000
+format = '[$duration]($style)'
+
+[directory]
+format = '[$path]($style) [$read_only]($read_only_style)'
+truncation_symbol = '…/'
+read_only = '≈'
+
+[gcloud]
+format = 'on [$symbol$account(@$domain)(\($region\))]($style)'
+
+[git_branch]
+always_show_remote = true
+truncation_symbol = '…/' 
+style = 'bold yellow'
+format = 'on [$symbol$branch(:$remote_branch)]($style)'
+
+[package]
+format = '[$symbol$version]($style) '
