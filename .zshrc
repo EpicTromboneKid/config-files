@@ -113,3 +113,4 @@ eval "$(zoxide init --cmd cd zsh)"
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=12'
 eval "$(starship init zsh)"
+eval "$(warp-cli generate-completions zsh)"
